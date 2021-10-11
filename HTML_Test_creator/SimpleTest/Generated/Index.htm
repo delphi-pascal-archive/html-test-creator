@@ -1,0 +1,85 @@
+<HTML> 
+<div class=Section1>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+style='background:#333333;border-collapse:collapse;border:none'>
+<tr style='height:15.15pt'>
+<td width=982 valign=top style='width:736.15pt;border:solid windowtext 1.0pt;
+padding:0cm 5.4pt 0cm 5.4pt;height:15.15pt'>
+<font color="White"> 
+<p class=MsoNormal align=right style='text-align:right'><span
+lang=EN-US>Powered
+by HTML Test Creator </span></p>
+</tr>
+</table>
+</div>
+
+<head><CENTER><title>Пробный HTML тест</title>Пробный HTML тест</CENTER></head> <body>
+<HR><BR>Для начала тестирования заполните следующую информацию:<P><P>
+<p><p>Введите ваше имя<br><input id=NFO1 type="text" value="" size=30><P>
+<p><p>Введите вашу фамилию<br><input id=NFO2 type="text" value="" size=30><P>
+<p><p>
+<center><button ID=StartTEST onclick="StartTST()">Начать тест</button></center>
+<HR><P><P>
+<br><br>2+2=?<br>
+<Form id=FRM0>
+<input ID=OTV0 type="radio" name="sample">1<br>
+<input ID=OTV1 type="radio" name="sample">2<br>
+<input ID=OTV2 type="radio" name="sample">3<br>
+<input ID=OTV3 type="radio" name="sample">4<br>
+</Form>
+<HR>
+<br><br>2+2*2=?<br>
+<Form id=FRM1>
+<input ID=OTV0 type="radio" name="sample">8<br>
+<input ID=OTV1 type="radio" name="sample">6<br>
+</Form>
+<HR>
+<br><br>5*5=?<br>
+<Form id=FRM2>
+<input ID=OTV0 type="radio" name="sample">15<br>
+<input ID=OTV1 type="radio" name="sample">25<br>
+<input ID=OTV2 type="radio" name="sample">30<br>
+</Form>
+<HR>
+<center><button ID=ResultTEST onclick="clickme()">Завершить тест</button></center>
+<script language="vbscript">
+A=0
+FRM0.disabled = True
+FRM1.disabled = True
+FRM2.disabled = True
+ResultTEST.disabled = True
+Sub StartTST()
+Pravda = 0
+if NFO1.VALUE <> "" then if NFO2.VALUE <> "" then  pravda = 1
+if pravda = 1 then
+FRM0.disabled = False
+FRM1.disabled = False
+FRM2.disabled = False
+ResultTEST.disabled = False
+StartTEST.disabled = True
+end if
+if pravda = 0 then MsgBox"Вы не полностью заполнили регистрационную форму!", 48, "Пробный HTML тест"
+pravda = 0
+End Sub
+Sub clickme()
+if FRM0.OTV0.checked = True then A=A+(0)
+if FRM0.OTV1.checked = True then A=A+(0)
+if FRM0.OTV2.checked = True then A=A+(0)
+if FRM0.OTV3.checked = True then A=A+(1)
+if FRM1.OTV0.checked = True then A=A+(0)
+if FRM1.OTV1.checked = True then A=A+(1)
+if FRM2.OTV0.checked = True then A=A+(0)
+if FRM2.OTV1.checked = True then A=A+(1)
+if FRM2.OTV2.checked = True then A=A+(0)
+if A < 0 then A = 0
+MsgBox "Ваш результат : "& A &" ", 48, "Пробный HTML тест"
+ResultTEST.disabled = true
+StartTEST.disabled = False
+FRM0.disabled = True
+FRM1.disabled = True
+FRM2.disabled = True
+A=0
+End Sub
+</script>
+
+</BODY></HTML>
